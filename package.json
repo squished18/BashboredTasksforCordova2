@@ -13,6 +13,7 @@
     },
     "dependencies": {
         "cordova-windows": "~5.0.0",
-        "cordova-plugin-whitelist": "1"
+        "cordova-plugin-whitelist": "1",
+        "cordova-browser": "~4.1.0"
     }
 }
