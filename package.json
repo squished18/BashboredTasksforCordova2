@@ -8,12 +8,14 @@
             "windows"
         ],
         "plugins": {
-            "cordova-plugin-whitelist": {}
+            "cordova-plugin-whitelist": {},
+            "cordova-sqlite-storage": {}
         }
     },
     "dependencies": {
-        "cordova-windows": "~5.0.0",
+        "cordova-browser": "~4.1.0",
         "cordova-plugin-whitelist": "1",
-        "cordova-browser": "~4.1.0"
+        "cordova-sqlite-storage": "^2.0.4",
+        "cordova-windows": "~5.0.0"
     }
 }
