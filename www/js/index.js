@@ -28,6 +28,10 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
+
+        window.addEventListener('database_ready', test_database, false);
+
+        update_database();
     },
 
     // Update DOM on a Received Event
