@@ -1,5 +1,10 @@
 var DatabaseTasks = null;
 
+function test_database()
+{
+        
+};
+
 function database_tasks_update_version_1()
 {
     DatabaseTasks = window.sqlitePlugin.openDatabase({name : 'BashboredTasks.db', location: 'default'},
@@ -14,6 +19,8 @@ function database_tasks_update_version_1()
 
     DatabaseTasks.transaction(function (tx) {
         tx.executeSql('CREATE TABLE IF NOT EXISTS TableActiveTasks (description TEXT, owner TEXT, start_date INTEGER, due_date INTEGER, expiry_date INTEGER)');
+        tx.executeSql('INSERT INTO TableActiveTasks VALUES (?, ?, ?, ?, ?)',
+            ['First task', 'David Lau', 0, 0, 0]);
     },
     function (error)
     {
