@@ -29,6 +29,8 @@ var app = {
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
 
+        window.addEventListener('database_ready', test_database, false);
+
         update_database();
     },
 

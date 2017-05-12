@@ -2,7 +2,18 @@ var DatabaseTasks = null;
 
 function test_database()
 {
-        
+    console.log('test_database called');
+
+    DatabaseTasks.executeSql('SELECT * FROM TableActiveTasks', [],
+        function (resultSet)
+        {
+            console.log('query successful');
+            console.log('TableActiveTasks: ' + resultSet.rows.item(0).description);
+        },
+        function (error)
+        {
+            console.log("transaction ERROR: " + error.message);
+        });
 };
 
 function database_tasks_update_version_1()
@@ -28,7 +39,10 @@ function database_tasks_update_version_1()
     },
     function ()
     {
-        localStorage.setItem('database_tasks_version') = 1;
+        var event = new Event('database_ready');
+        window.dispatchEvent(event);
+
+        localStorage.setItem('database_tasks_version',  1);
         console.log("database updated to version 1");
     });
 };
