@@ -5,7 +5,7 @@ function database_tasks_update_version_1()
     DatabaseTasks = window.sqlitePlugin.openDatabase({name : 'BashboredTasks.db', location: 'default'});
 
     DatabaseTasks.transaction(function (tx) {
-        tx.executeSql('CREATE TABLE TableActiveTasks (description TEXT, start_date TEXT, due_date TEXT, expiry_date TEXT)');
+        tx.executeSql('CREATE TABLE TableActiveTasks (description TEXT, owner TEXT, start_date TEXT, due_date TEXT, expiry_date TEXT)');
     },
     function (error)
     {
